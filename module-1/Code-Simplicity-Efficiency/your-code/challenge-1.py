@@ -9,6 +9,33 @@ The code is very long and messy. Refactor it according to what you have learned 
 code simplicity and efficiency.
 """
 
+#solution
+def number_validator(inp):
+    try:
+        inp = int(inp)
+    except ValueError:
+        raise ValueError(f'Please insert a whole number. {inp} is not a whole number.')
+        
+def operand_validator(inp):
+    if inp != '+' and inp != '-':
+        raise ValueError(f'Please insert a + or a -. {inp} is neither.')
+        
+print('Welcome to this calculator!')
+print('It can add and subtract whole numbers from zero to five')
+a = input('Please choose your first number: ')
+number_validator(a)
+b = input('What do you want to do? + or -: ')
+operand_validator(b)
+c = input('Please choose your second number: ')
+number_validator(c) 
+    
+print(f'{a} {b} {c} equals {eval(f"int(a) {b} int(c)")}')
+print("Thanks for using this calculator, goodbye :)")
+
+###########################################################
+
+
+
 print('Welcome to this calculator!')
 print('It can add and subtract whole numbers from zero to five')
 a = input('Please choose your first number (zero to five): ')
@@ -162,8 +189,15 @@ if a == 'five' and b == 'minus' and c == 'four':
 if a == 'five' and b == 'minus' and c == 'five':
     print("five minus five equals zero")
 
-
-if (not a == 'zero' and not a == 'one' and not a == 'two' and not a == 'three' and not a == 'four' and not a == 'five') or (not c == 'zero' and not c == 'one' and not c == 'two' and not c == 'three' and not c == 'four' and not c == 'five') or (not b == 'plus' and not b == 'minus'):
+else:
     print("I am not able to answer this question. Check your input.")
+    
+if (not a == 'zero' and not a == 'one' and not a == 'two' and not a == 'three' and not a == 'four' and not a == 'five') or (not c == 'zero' and not c == 'one' and not c == 'two' and not c == 'three' and not c == 'four' and not c == 'five') or (not b == 'plus' and not b == 'minus'):
+    
 
 print("Thanks for using this calculator, goodbye :)")
+
+
+
+
+
